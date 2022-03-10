@@ -13,7 +13,6 @@ public class Cell {
         this.game = game;
     }
 
-    // Getter
     public int getX() {
         return x;
     }
