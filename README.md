@@ -21,11 +21,11 @@ public class Main {
     public static void main(String[] args) {
         Game game = new Game();
         String playerPos = "11";
-        for(int iy = 0; iy <= 7; iy++){
-            for(int ix = 0; ix <= 7; ix++){
-                game.addCell("" + ix + iy, "⬛");
-            }
-        }
+        game.addRow("⬛⬛⬛⬛⬛");
+        game.addRow("⬛⬛⬛⬛⬛");
+        game.addRow("⬛⬛⬛⬛⬛");
+        game.addRow("⬛⬛⬛⬛⬛");
+        game.addRow("⬛⬛⬛⬛⬛");
         game.addCell(playerPos, "\uD83D\uDD34");
 
         while (true) {
