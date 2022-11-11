@@ -19,8 +19,8 @@ import eu.amiraxoba.gamelib.game.Listener;
 
 public class Main {
     public static void main(String[] args) {
-        Game game = new Game();
-        String playerPos = "11";
+        Game game = new Game(); // Create a new Instance of the Class Game
+        String playerPos = "11"; // Set the Player Positon, so we can use it later for movement
         // Build the Map Row by Row (Can't be bigger than 9*9)
         game.addRow("⬛⬛⬛⬛⬛");
         game.addRow("⬛⬛⬛⬛⬛");
