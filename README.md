@@ -21,26 +21,28 @@ public class Main {
     public static void main(String[] args) {
         Game game = new Game();
         String playerPos = "11";
+        // Build the Map Row by Row (Can't be bigger than 9*9)
         game.addRow("⬛⬛⬛⬛⬛");
         game.addRow("⬛⬛⬛⬛⬛");
         game.addRow("⬛⬛⬛⬛⬛");
         game.addRow("⬛⬛⬛⬛⬛");
         game.addRow("⬛⬛⬛⬛⬛");
-        game.addCell(playerPos, "\uD83D\uDD34");
-
+        game.addCell(playerPos, "\uD83D\uDD34"); // Create the player-cell
+        
+        // This Code will run until the game is closed
         while (true) {
-            game.render();
-            char input = Listener.getInput("Input > ");
-            Cell newCell;
-            String oldPos;
+            game.render(); // Render the map
+            char input = Listener.getInput("Input > "); // ASks the Player for the action they wan't to do
+            Cell newCell; // Create the Variable for later
+            String oldPos; // Create the Variable for later
             switch (input) {
-                case 'd':
-                    oldPos = playerPos;
-                    newCell = game.getMap().get(playerPos).getRightCell();
-                    if (newCell == null) break;
-                    playerPos = "" + newCell.getX() + newCell.getY();
-                    game.addCell(playerPos, "\uD83D\uDD34");
-                    game.addCell(oldPos, "⬛");
+                case 'd': // The following code will be pretty the same, just different directions
+                    oldPos = playerPos; // get The current Position of the player
+                    newCell = game.getMap().get(playerPos).getRightCell(); // Get the Cell, the player wants to move to
+                    if (newCell == null) break; // Cancel, if it is out of bounce
+                    playerPos = "" + newCell.getX() + newCell.getY(); // Calculate the new Position of the player
+                    game.addCell(playerPos, "\uD83D\uDD34"); // Add the new Player-Cell to the Game
+                    game.addCell(oldPos, "⬛"); // Clear the Cell, the player left
                     break;
                 case 'a':
                     oldPos = playerPos;
@@ -67,7 +69,7 @@ public class Main {
                     game.addCell(oldPos, "⬛");
                     break;
             }
-            System.out.print("\033[H\033[2J");
+            System.out.print("\033[H\033[2J"); // This is for clearing the console
         }
     }
 }
