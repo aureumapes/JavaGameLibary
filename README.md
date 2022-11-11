@@ -5,6 +5,7 @@
 1. Create a Game variable: `Game game = new Game();`
 2. Add every Cell you want in the game to it: `game.addCell(<coord>, <value>)`
     * You can also use `game.addRow(<entire row)` to add an entire row
+    * The Map can't be bigger than 9^2
 
 ## Handle Input
 To Get User Input use `Listener.getInput(<message>);`. It will return a char which is the first given by the User
